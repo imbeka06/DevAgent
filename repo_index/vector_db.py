@@ -2,7 +2,7 @@ import os
 import chromadb
 from chromadb.utils import embedding_functions
 
-# Ensure the database goes to the exact folder we created
+# Ensure the database goes to the exact folder I created
 DB_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'database', 'vectors'))
 
 def get_db_client():
