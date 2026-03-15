@@ -1,0 +1,17 @@
+# Environments
+venv/
+env/
+
+# API Keys and Secrets
+.env
+
+# Database
+database/vectors/
+
+# Node/VS Code Extension
+node_modules/
+out/
+
+# Python Cache
+__pycache__/
+*.pyc
