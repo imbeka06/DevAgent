@@ -17,7 +17,7 @@ def get_llm():
         raise ValueError("GOOGLE_API_KEY not found in .env file.")
     
     # Using gemini-1.5-flash for speed and efficiency.
-    return ChatGoogleGenerativeAI(model="gemini-pro", temperature=0)
+    return ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
 
 def orchestrate_query(query: str):
     """
