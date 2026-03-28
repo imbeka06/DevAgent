@@ -14,6 +14,7 @@ def hunt_for_bugs(ast_analysis: dict):
     """
     print("-> Bug Agent: Analyzing code structure for vulnerabilities...")
     
+    # Using the exact same model string that worked perfectly in your controller
     llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
     
     prompt = PromptTemplate(
@@ -32,27 +33,30 @@ def hunt_for_bugs(ast_analysis: dict):
     )
     
     chain = prompt | llm
-    # Convert the Python dictionary to a readable JSON string for the AI
     response = chain.invoke({"code_structure": json.dumps(ast_analysis, indent=2)})
     
     return response.content
 
-# Quick test block
 if __name__ == "__main__":
-    # Import  AST parser from Phase 1 to feed the Bug Agent
     import sys
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
     from analysis.ast_parser import analyze_python_file
     
-    # Analyze  scanner.py file
+    # Target our scanner.py file
     target_file = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'repo_index', 'scanner.py'))
-    ast_data = analyze_python_file(target_file)
     
     print(f"Bug Hunter Target: {target_file}\n")
+    ast_data = analyze_python_file(target_file)
+    
+    # DEBUG: Let's look at the AST data before we hand it to the AI
+    print("\n DEBUG: AST Data Being Sent ")
+    print(json.dumps(ast_data, indent=2))
+    print("----------------------------------\n")
     
     try:
         report = hunt_for_bugs(ast_data)
         print("-" * 40)
+        print("Bug Report:")
         print(report)
         print("-" * 40)
     except Exception as e:
