@@ -30,6 +30,7 @@ def orchestrate_query(query: str):
     
     # Grab the raw code as a string
     context_results = retrieve_code_context(query, n_results=1)
+    print(f"\n DEBUG: Raw Context Retrieved \n{context_results}\n-----------------------------------\n")
     context = context_results[0] if isinstance(context_results, list) else context_results
 
     if "No relevant code found" in context or "Error" in context:
