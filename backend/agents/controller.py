@@ -33,7 +33,8 @@ def orchestrate_query(query: str):
     print(f"\n DEBUG: Raw Context Retrieved \n{context_results}\n-----------------------------------\n")
     context = context_results[0] if isinstance(context_results, list) else context_results
 
-    if "No relevant code found" in context or "Error" in context:
+    # Only hide context if it's an actual database error message, not just the word "Error"
+    if context.startswith("Error: 'devagent_repo'") or "No relevant code found" in context:
         context = "No relevant codebase context found for this query."
 
     print("-> Controller: Context retrieved. Handing to Gemini...\n")
