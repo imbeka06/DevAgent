@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <style>
+      .rocket-body { fill: #FF6B6B; }
+      .rocket-nose { fill: #FFD93D; }
+      .rocket-window { fill: #4ECDC4; }
+      .rocket-fins { fill: #95E1D3; }
+      .flame1 { fill: #FF6B6B; }
+      .flame2 { fill: #FFD93D; }
+    </style>
+  </defs>
+  
+  <!-- Rocket body -->
+  <ellipse cx="64" cy="50" rx="20" ry="35" class="rocket-body"/>
+  
+  <!-- Rocket nose cone -->
+  <path d="M 64 10 L 55 35 L 73 35 Z" class="rocket-nose"/>
+  
+  <!-- Rocket window/porthole -->
+  <circle cx="64" cy="35" r="8" class="rocket-window"/>
+  
+  <!-- Left fin -->
+  <path d="M 44 70 L 30 85 L 44 80 Z" class="rocket-fins"/>
+  
+  <!-- Right fin -->
+  <path d="M 84 70 L 98 85 L 84 80 Z" class="rocket-fins"/>
+  
+  <!-- Flame trails -->
+  <path d="M 55 85 Q 50 100 52 115 Q 54 105 55 95 Z" class="flame1"/>
+  <path d="M 64 85 Q 64 105 64 120 Q 64 105 64 95 Z" class="flame2"/>
+  <path d="M 73 85 Q 78 100 76 115 Q 74 105 73 95 Z" class="flame1"/>
+  
+  <!-- Decorative stars -->
+  <circle cx="25" cy="25" r="3" class="flame2" opacity="0.8"/>
+  <circle cx="105" cy="30" r="2.5" class="flame2" opacity="0.7"/>
+  <circle cx="30" cy="110" r="2" class="flame2" opacity="0.6"/>
+</svg>
