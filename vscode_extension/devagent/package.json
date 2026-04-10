@@ -1,0 +1,45 @@
+{
+  "name": "devagent",
+  "displayName": "devagent",
+  "description": "Multi-Agent AI Coding Assistant",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:devagent.chatView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "devagent-sidebar",
+          "title": "DevAgent",
+          "icon": "$(robot)"
+        }
+      ]
+    },
+    "views": {
+      "devagent-sidebar": [
+        {
+          "type": "webview",
+          "id": "devagent.chatView",
+          "name": "Chat"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/node": "20.x",
+    "typescript": "^5.4.5"
+  }
+}
