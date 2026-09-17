@@ -3,6 +3,7 @@
   "displayName": "devagent",
   "description": "Multi-Agent AI Coding Assistant",
   "version": "0.0.1",
+  "publisher": "imbeka06",
   "engines": {
     "vscode": "^1.90.0"
   },
