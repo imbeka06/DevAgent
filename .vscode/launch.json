@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run DevAgent Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/vscode_extension/devagent"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/vscode_extension/devagent/out/**/*.js"
+      ],
+      "preLaunchTask": "compile-devagent"
+    }
+  ]
+}
