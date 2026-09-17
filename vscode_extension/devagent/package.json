@@ -19,7 +19,7 @@
         {
           "id": "devagent-sidebar",
           "title": "DevAgent",
-          "icon": "$(robot)"
+          "icon": "resources/icon.svg"
         }
       ]
     },
